@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ВАЗ-2107</title>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        @keyframes fon {
+            0% {
+                background-image: url("source/image.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            20% {
+                background-image: url("source/1200x900 (1).webp");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            40% {
+                background-image: url("source/lada.webp");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            60% {
+                background-image: url("source/1200x900.webp");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            80% {
+                background-image: url("source/1200x900\ \(3\).webp");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            100% {
+                background-image: url("source/i.webp");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        body {
+            animation-name: fon;
+            animation-duration: 25s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            padding: 0px;
+            z-index: -999;
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info {
+            position: fixed;
+            bottom: 10px;
+            margin: auto;
+            text-decoration: none;
+            color: grey;
+        }
+
+        .info:hover {
+            position: fixed;
+            bottom: 10px;
+            margin: auto;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .page-view-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .animation-blok {
+            width: 98%;
+            height: 98%;
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.767);
+            box-shadow: 0px 0px 30px rgb(0, 0, 0);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .animation-text {
+            color: white;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .animation-text p {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            opacity: 0;
+            animation: fadeInOut 24s infinite;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .animation-text p:nth-child(1) {
+            animation-delay: 0s;
+            top: 40%;
+        }
+
+        .animation-text p:nth-child(2) {
+            animation-delay: 4s;
+            top: 40%;
+        }
+
+        .animation-text p:nth-child(3) {
+            animation-delay: 8s;
+            top: 40%;
+        }
+
+        .animation-text p:nth-child(4) {
+            animation-delay: 12s;
+            top: 40%;
+        }
+
+        .animation-text p:nth-child(5) {
+            animation-delay: 16s;
+            top: 40%;
+        }
+
+        .animation-text p:nth-child(6) {
+            animation-delay: 20s;
+            top: 40%;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            30% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body class="page-view-main">
+    <div class="animation-blok">
+        <div class="animation-text">
+            <p>Проект: ВАЗ-2107 - Легенда советского автопрома</p>
+            <p>Год создания: 2025</p>
+            <p>Автор: Азизов Бахтияр</p>
+            <p>Цель проекта: Сохранение истории советского автомобилестроения</p>
+            <p>Используемые технологии: HTML, CSS</p>
+            <p style="font-size: larger; color: red;">Спасибо за внимание!</p>
+        </div>
+    </div>
+    <a href="Introduction.html" class="info">Вернуться на главную</a>
+</body>
+
+</html>

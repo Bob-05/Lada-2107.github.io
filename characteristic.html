@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ВАЗ-2107</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*
+        html{
+            overflow-x: hidden;  предотвращает горизонтальный скролл 
+        }
+        */
+
+        .body-grid {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+        }
+
+        .header {
+            grid-row: 1/2;
+            margin: auto;
+            width: 96%;
+            margin-top: 6px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: gray;
+            box-shadow: 0px 0px 10px grey;
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 100%;
+
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .badge {
+            grid-column: 2/7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge img {
+            width: 68%;
+            height: auto;
+        }
+
+        .foto-1 img {
+            height: 100%;
+        }
+
+        .menu-site {
+            grid-column: 7/8;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+        /* Стили для выпадающего меню */
+        .dropdown {
+            position: absolute;
+            top: 80px;
+            right: 3%;
+            margin: 10px;
+
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: gray;
+            height: auto;
+            width: 130px;
+
+            box-shadow: 0px 0px 10px red;
+
+            display: none;
+
+            z-index: 100;
+        }
+
+
+
+        .dropdown-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown-content a:link,
+        .dropdown-content a:visited {
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin: 6px;
+
+            width: 90%;
+            height: auto;
+
+            background-color: black;
+            color: white;
+            text-decoration: none;
+
+            padding: 2px;
+        }
+
+
+        .dropdown-content a:hover {
+            box-shadow: 0px 0px 15px red;
+        }
+
+        .dropdown-content a:active {
+            box-shadow: 0px 0px 17px red;
+            font-size: large;
+
+        }
+
+
+
+        .dropdown-btn {
+            width: 50px;
+            box-shadow: 0px 0px 10px rgb(157, 255, 0);
+        }
+
+        .menu-site img:hover {
+            width: 55px;
+            box-shadow: 0px 0px 10px rgb(255, 0, 0);
+        }
+
+        /* Показываем меню при наведении на кнопку */
+        .dropdown-btn:hover+.dropdown,
+        .dropdown-btn:active,
+        .dropdown:hover {
+            display: block;
+        }
+
+
+        /*main*/
+        .main {
+            width: 60%;
+            height: auto;
+            border: 1px solid black;
+            margin: auto;
+
+            grid-row: 2/3;
+            border-radius: 20px;
+            padding: 10px;
+
+            background-color: rgb(232, 232, 232);
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .main img {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid rgb(0, 0, 0);
+
+        }
+
+        .main h2 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .main p {
+            text-align: justify;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .main__p {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: antiquewhite;
+        }
+
+        .button-main {
+            width: 100%;
+            height: 60px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .button-main a:link,
+        .button-main a:visited {
+            display: block;
+            width: 220px;
+            height: 45px;
+            border: 1px Solid black;
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: white;
+
+        }
+
+        .button-main__link-1 {
+            text-decoration: none;
+        }
+
+        .button-main__link-2 {
+            text-decoration: none;
+        }
+
+        .button-main a:hover {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px red;
+        }
+
+        .button-main a:active {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px red;
+            width: 225px;
+            height: 50px;
+        }
+
+
+        /*footer*/
+        .footer {
+            width: 100%;
+            height: 80px;
+            grid-row: 3/4;
+
+            margin: auto;
+            margin-top: 10px;
+            background-color: grey;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer a:link,
+        .footer a:visited {
+            color: rgb(185, 185, 185);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+            font-size: larger;
+        }
+
+        .footer a:active {
+            color: red;
+            font-size: larger;
+        }
+
+        /*table*/
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .table {
+            background-color: antiquewhite;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #323232;
+            padding: 12px;
+        }
+
+        .category {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: black;
+            font-weight: bold;
+        }
+
+        /* Эффекты при наведении */
+        td:hover {
+            background-color: #3e4142;
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }   
+    </style>
+</head>
+
+
+<body class="body-grid">
+    <header class="header">
+
+        <div class="foto-1">
+            <img src="source\i.png" alt="">
+        </div>
+        <div class="badge">
+            <img src="source\MyLOGO--LADA-2107.png" alt="LADA 2107">
+        </div>
+        <div class="menu-site">
+            <img class="dropdown-btn" src="source/menu.png">
+            <nav class="dropdown">
+                <div class="dropdown-content">
+                    <a href="Introduction.html">Главная</a>
+                    <a href="history.html">История</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="characteristic.html">Технические характеристики</a>
+                    <a href="info.html">О проекте</a>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main class="main">
+        <img src="source\character\image.png" alt="lada-2107">
+        <h2>Технические особенности и модификации Lada 2107</h2>
+        <p class="main__p">
+            Lada 2107 предлагала покупателям проверенную временем техническую начинку, которая обеспечивала автомобилю
+            репутацию
+            «неубиваемого».
+        </p>
+
+        <div class="table">
+            <table>
+                <tr>
+                    <th colspan="2">Основные характеристики</th>
+                </tr>
+
+                <tr class="category">
+                    <td colspan="2">Двигатели</td>
+                </tr>
+                <tr>
+                    <td>ВАЗ-2103</td>
+                    <td>1.5 л, 75 л.с. — базовый вариант</td>
+                </tr>
+                <tr>
+                    <td>ВАЗ-2106</td>
+                    <td>1.6 л, 80 л.с. — для более динамичной езды</td>
+                </tr>
+                <tr>
+                    <td>ВАЗ-21067</td>
+                    <td>1.7 л, инжектор — последняя модернизированная версия</td>
+                </tr>
+
+                <tr class="category">
+                    <td colspan="2">Трансмиссия</td>
+                </tr>
+                <tr>
+                    <td colspan="2">4-ступенчатая механическая коробка передач</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Задний привод</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Сухое однодисковое сцепление</td>
+                </tr>
+
+                <tr class="category">
+                    <td colspan="2">Ходовая часть</td>
+                </tr>
+                <tr>
+                    <td>Передняя подвеска</td>
+                    <td>Независимая, на поперечных рычагах</td>
+                </tr>
+                <tr>
+                    <td>Задняя подвеска</td>
+                    <td>Зависимая, на продольных рычагах</td>
+                </tr>
+                <tr>
+                    <td>Тормоза</td>
+                    <td>Передние дисковые, задние барабанные</td>
+                </tr>
+
+                <tr class="category">
+                    <td colspan="2">Габариты и масса</td>
+                </tr>
+                <tr>
+                    <td>Длина</td>
+                    <td>4145 мм</td>
+                </tr>
+                <tr>
+                    <td>Ширина</td>
+                    <td>1620 мм</td>
+                </tr>
+                <tr>
+                    <td>Высота</td>
+                    <td>1440 мм</td>
+                </tr>
+                <tr>
+                    <td>Колесная база</td>
+                    <td>2424 мм</td>
+                </tr>
+                <tr>
+                    <td>Снаряженная масса</td>
+                    <td>1010 кг</td>
+                </tr>
+
+                <tr class="category">
+                    <td colspan="2">Динамические характеристики</td>
+                </tr>
+                <tr>
+                    <td>Максимальная скорость</td>
+                    <td>152 км/ч</td>
+                </tr>
+                <tr>
+                    <td>Разгон 0-100 км/ч</td>
+                    <td>17 секунд</td>
+                </tr>
+                <tr>
+                    <td>Расход топлива</td>
+                    <td>8.5 л/100 км (смешанный цикл)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="button-main">
+            <a class="button-main__link-2" href="Introduction.html">
+                <p>Главная</p>
+            </a>
+            <a class="button-main__link-1" href="history.html" style="margin-left: 5px; margin-right: 5px;">
+                <p>Изучить историю</p>
+            </a>
+            <a class="button-main__link-2" href="gallery.html">
+                <p>Посмотреть галерею</p>
+            </a>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <a href="info.html">О проекте</a>
+    </footer>
+</body>
+
+</html>

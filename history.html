@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ВАЗ-2107</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .body-grid {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+
+        .header {
+            grid-row: 1/2;
+            margin: auto;
+            width: 96%;
+            margin-top: 6px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: gray;
+            box-shadow: 0px 0px 10px grey;
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 100%;
+
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .badge {
+            grid-column: 2/7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge img {
+            width: 68%;
+            height: auto;
+        }
+
+        .foto-1 img {
+            height: 100%;
+        }
+
+        .menu-site {
+            grid-column: 7/8;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+        /* Стили для выпадающего меню */
+        .dropdown {
+            position: absolute;
+            top: 80px;
+            right: 3%;
+            margin: 10px;
+
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: gray;
+            height: auto;
+            width: 130px;
+
+            box-shadow: 0px 0px 10px red;
+
+            display: none;
+
+            z-index: 100;
+        }
+
+
+
+        .dropdown-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown-content a:link,
+        .dropdown-content a:visited {
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin: 6px;
+
+            width: 90%;
+            height: auto;
+
+            background-color: black;
+            color: white;
+            text-decoration: none;
+
+            padding: 2px;
+        }
+
+
+        .dropdown-content a:hover {
+            box-shadow: 0px 0px 15px red;
+        }
+
+        .dropdown-content a:active {
+            box-shadow: 0px 0px 17px red;
+            font-size: large;
+
+        }
+
+
+
+        .dropdown-btn {
+            width: 50px;
+            box-shadow: 0px 0px 10px rgb(157, 255, 0);
+        }
+
+        .menu-site img:hover {
+            width: 55px;
+            box-shadow: 0px 0px 10px rgb(255, 0, 0);
+        }
+
+        /* Показываем меню при наведении на кнопку */
+        .dropdown-btn:hover+.dropdown,
+        .dropdown-btn:active,
+        .dropdown:hover {
+            display: block;
+        }
+
+
+        /*main*/
+        .main {
+            width: 60%;
+            height: auto;
+            border: 1px solid black;
+            margin: auto;
+
+            grid-row: 2/3;
+            border-radius: 20px;
+            padding: 10px;
+
+            background-color: rgb(232, 232, 232);
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .main img {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid rgb(0, 0, 0);
+
+        }
+
+        .main h2 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .main p {
+            text-align: justify;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .button-main {
+            width: 100%;
+            height: 60px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+
+        .facts,
+        .stages,
+        .main-text {
+            width: auto;
+            height: auto;
+            border: 1px solid black;
+            margin: 10px;
+            border-radius: 15px;
+            padding: 8px;
+            text-align: justify;
+            background-color: antiquewhite;
+        }
+
+        /*------lada 2105-------
+        .stages img{
+            width: 20%;
+            display: none;
+            border: 3px dashed black;
+
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            bottom: 10%;
+            margin: auto;
+            
+            box-shadow: 0px 0px 15px red;;
+        }
+
+        .lada2105{
+            color: red;
+            font-weight: bold;
+        }
+
+        .lada2105:hover .stages img{
+            display: block;
+        }
+        ----*/
+
+        .period {
+            font-weight: bold;
+        }
+
+
+        .button-main a {
+            display: block;
+            width: 220px;
+            height: 45px;
+            border: 1px Solid black;
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .button-main__link-1 {
+            text-decoration: none;
+        }
+
+        .button-main__link-2 {
+            text-decoration: none;
+        }
+
+
+        .button-main {
+            width: 100%;
+            height: 60px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .button-main a:link,
+        .button-main a:visited {
+            display: block;
+            width: 220px;
+            height: 45px;
+            border: 1px Solid black;
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: white;
+
+        }
+
+        .button-main__link-1 {
+            text-decoration: none;
+        }
+
+        .button-main__link-2 {
+            text-decoration: none;
+        }
+
+        .button-main a:hover {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px red;
+        }
+
+        .button-main a:active {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px red;
+            width: 225px;
+            height: 50px;
+        }
+
+        /*footer*/
+        .footer {
+            width: 100%;
+            height: 80px;
+            grid-row: 3/4;
+
+            margin: auto;
+            margin-top: 10px;
+            background-color: grey;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer a:link,
+        .footer a:visited {
+            color: rgb(185, 185, 185);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+            font-size: larger;
+        }
+
+        .footer a:active {
+            color: red;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+
+<body class="body-grid">
+    <header class="header">
+
+        <div class="foto-1">
+            <img src="source\i.png" alt="">
+        </div>
+        <div class="badge">
+            <img src="source\MyLOGO--LADA-2107.png" alt="LADA 2107">
+        </div>
+        <div class="menu-site">
+            <img class="dropdown-btn" src="source/menu.png">
+            <nav class="dropdown">
+                <div class="dropdown-content">
+                    <a href="Introduction.html">Главная</a>
+                    <a href="history.html">История</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="characteristic.html">Технические характеристики</a>
+                    <a href="info.html">О проекте</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <img src="source\history\image.png" alt="lada-2107">
+        <h2>История создания и эволюция Lada 2107</h2>
+        <div class="main-text">
+            <p>
+                Разработка Lada 2107 началась в конце 1970-х годов как часть программы модернизации классического
+                семейства.
+                Инженеры
+                Волжского автозавода ставили перед собой задачу создать более современную и комфортабельную версию
+                популярной модели
+                <span class="lada2105">2105</span>, которая могла бы конкурировать с импортными автомобилями начального уровня.
+            </p>
+        </div>
+
+        <div class="stages">
+            <ol>
+                <li>
+                    <span class="period">1979-1981</span> — разработка дизайна и технических решений. За основу взяли
+                    модель <span class="lada2105">2105</span>,
+                    но добавили:
+                    <ul>
+                        <li>Новую переднюю часть с четырёхфарной оптикой</li>
+                        <li>Хромированные элементы экстерьера</li>
+                        <li>Улучшенную панель приборов</li>
+                        <li>Более комфортабельные сиденья</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span class="period">1982</span> — начало серийного производства. Первые экземпляры сошли с
+                    конвейера в феврале
+                    1982 года.
+                </li>
+
+                <li>
+                    <span class="period">1980-1990-е</span> — период массовой популярности. «Семёрка» стала желанным
+                    автомобилем для
+                    советских граждан, символизируя определённый статус владельца.
+                </li>
+
+                <li>
+                    <span class="period">2000-е годы</span> — постепенное устаревание модели. Несмотря на попытки
+                    модернизации
+                    (например, инжекторные двигатели), автомобиль терял конкурентоспособность.
+                </li>
+
+                <li>
+                    <span class="period">2012</span> — прекращение производства. Последняя «семёрка» сошла с конвейера
+                    17 апреля
+                    2012 года, завершив 30-летнюю историю модели.
+                </li>
+            </ol>
+        </div>
+
+        <div class="facts">
+            <h3>Интересные факты</h3>
+            <ul>
+                <li>Экспортные версии продавались под названием Lada Riva в Великобритании</li>
+                <li>В некоторых странах «семёрка» до сих пор используется как полицейский автомобиль</li>
+                <li>Существовала версия с правым рулём (21072) для экспорта</li>
+            </ul>
+        </div>
+
+        <div class="button-main">
+            <a class="button-main__link-2" href="gallery.html">
+                <p>Посмотреть галерею</p>
+            </a>
+            <a class="button-main__link-2" href="characteristic.html">
+                <p>Характеристики</p>
+            </a>
+        </div>
+        <!--<img src="source/history/2105.jpg" alt="LADA-2105">-->
+    </main>
+    <footer class="footer">
+        <a href="info.html">О проекте</a>
+    </footer>
+</body>
+
+</html>

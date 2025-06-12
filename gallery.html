@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ВАЗ-2107</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*
+        html{
+            overflow-x: hidden;  предотвращает горизонтальный скролл 
+        }
+        */
+
+        .body-grid {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+        }
+
+        .header {
+            grid-row: 1/2;
+            margin: auto;
+            width: 96%;
+            margin-top: 6px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: gray;
+            box-shadow: 0px 0px 10px grey;
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 100%;
+
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .badge {
+            grid-column: 2/7;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge img {
+            width: 68%;
+            height: auto;
+        }
+
+        .foto-1 img {
+            height: 100%;
+        }
+
+        .menu-site {
+            grid-column: 7/8;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+        /* Стили для выпадающего меню */
+        .dropdown {
+            position: absolute;
+            top: 80px;
+            right: 3%;
+            margin: 10px;
+
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: gray;
+            height: auto;
+            width: 130px;
+
+            box-shadow: 0px 0px 10px red;
+
+            display: none;
+
+            z-index: 100;
+        }
+
+
+
+        .dropdown-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown-content a:link,
+        .dropdown-content a:visited {
+            display: block;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin: 6px;
+
+            width: 90%;
+            height: auto;
+
+            background-color: black;
+            color: white;
+            text-decoration: none;
+
+            padding: 2px;
+        }
+
+
+        .dropdown-content a:hover {
+            box-shadow: 0px 0px 15px red;
+        }
+
+        .dropdown-content a:active {
+            box-shadow: 0px 0px 17px red;
+            font-size: large;
+
+        }
+
+
+
+        .dropdown-btn {
+            width: 50px;
+            box-shadow: 0px 0px 10px rgb(157, 255, 0);
+        }
+
+        .menu-site img:hover {
+            width: 55px;
+            box-shadow: 0px 0px 10px rgb(255, 0, 0);
+        }
+
+        /* Показываем меню при наведении на кнопку */
+        .dropdown-btn:hover+.dropdown,
+        .dropdown-btn:active,
+        .dropdown:hover {
+            display: block;
+        }
+
+
+        /*main*/
+        .main {
+            width: 70%;
+            height: auto;
+            border: 1px solid black;
+            margin: auto;
+
+            grid-row: 2/3;
+            border-radius: 20px;
+            padding: 10px;
+
+            background-color: rgb(232, 232, 232);
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .main img {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid rgb(0, 0, 0);
+
+        }
+
+        .main h2 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .main p {
+            text-align: justify;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .main__p {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: antiquewhite;
+        }
+
+        .button-main {
+            width: 100%;
+            height: 60px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .button-main a:link,
+        .button-main a:visited {
+            display: block;
+            width: 220px;
+            height: 45px;
+            border: 1px Solid black;
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: white;
+
+        }
+
+        .button-main__link-1 {
+            text-decoration: none;
+        }
+
+        .button-main__link-2 {
+            text-decoration: none;
+        }
+
+        .button-main a:hover {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px red;
+        }
+
+        .button-main a:active {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px red;
+            width: 225px;
+            height: 50px;
+        }
+
+        .Photo{
+            display: grid;
+            grid-template-rows: 2fr, repeat(3, 1fr);
+            grid-template-columns: auto;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18pt;
+        }
+
+        .Photo h3{
+            margin-bottom: 2px;
+        }
+
+        .Photo-body{
+            display: grid;
+            grid-template: auto auto / repeat(3, 1fr);
+            gap: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+        }
+
+        .Photo-body img, .Photo-motor img,
+         .Photo-plan img, .Photo-salon img{
+            margin: auto;
+        }
+
+        .Photo-salon{
+            display: grid;
+            grid-template: 1fr / repeat(3, 1fr);
+            gap: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+        }
+
+
+
+        .Photo-motor{
+            display: grid;
+            grid-template: 1fr / repeat(3, 1fr);
+            gap: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+        }
+
+        .Photo-plan{
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 5px;
+        }
+
+        .Photo-plan img{
+            width: 100%;
+        }
+
+        .Photo-body img:hover, .Photo-salon img:hover,
+        .Photo-motor img:hover, .Photo-plan img:hover{
+            box-shadow: 0px 0px 10px red;
+        }
+
+        /*footer*/
+        .footer {
+            width: 100%;
+            height: 80px;
+            grid-row: 3/4;
+
+            margin: auto;
+            margin-top: 10px;
+            background-color: grey;
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer a:link,
+        .footer a:visited {
+            color: rgb(185, 185, 185);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+            font-size: larger;
+        }
+
+        .footer a:active {
+            color: red;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+
+<body class="body-grid">
+    <header class="header">
+
+        <div class="foto-1">
+            <img src="source\i.png" alt="">
+        </div>
+        <div class="badge">
+            <img src="source\MyLOGO--LADA-2107.png" alt="LADA 2107">
+        </div>
+        <div class="menu-site">
+            <img class="dropdown-btn" src="source/menu.png">
+            <nav class="dropdown">
+                <div class="dropdown-content">
+                    <a href="Introduction.html">Главная</a>
+                    <a href="history.html">История</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="characteristic.html">Технические характеристики</a>
+                    <a href="info.html">О проекте</a>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main class="main">
+        <div class="Photo">
+            <h3>Корпус</h3>
+            <div class="Photo-body">
+                <img src="source\gallery\Корпус\1fa09ed917696cdaba9e789711f5c4b7f1884708.jpg" alt="">
+                <img src="source/gallery/Корпус/16d6d0ds-1920.jpg">
+                <img src="source/gallery/Корпус/044a946edf03e258b13bf258f7a4df61.jpg">
+                <img src="source\gallery\Корпус\3d7f772s-1920.jpg">
+                <img src="source\gallery\Корпус\AQABEF9zFF7I546rDKRUHBHwJgZH_0l245W2qX9HBBGLWVa1BucoHDPmRtv-yI8Qo3sigSFN4N3YRj4S7HAoE2GJtVs.jpg">
+                <img src="source\gallery\Корпус\isU9EmORg84.jpg">
+            </div>
+            <h3>Салон</h3>
+            <div class="Photo-salon">
+                <img src="source/gallery/Салон/1200x900.webp" alt="">
+                <img src="source/gallery/Салон/4877088s-960.jpg">
+                <img src="source/gallery/Салон/KMAAAgLSAeA-1920.jpg">
+            </div>
+            <h3>Мотор</h3>
+            <div class="Photo-motor">
+                <img src="source\gallery\Двигатель\1679726430_hdpic-club-p-raspolozhenie-dvigatelya-vaz-2107-1.jpg">
+                <img src="source\gallery\Двигатель\1679726482_hdpic-club-p-raspolozhenie-dvigatelya-vaz-2107-9.jpg">
+                <img src="source\gallery\Двигатель\zkAAAgIbKOA-1920.jpg">
+            </div>
+            <h3>Чертёж</h3>
+            <div class="Photo-plan">
+                <img src="source\gallery\vaz-2107-2.jpg">
+                <img src="source\gallery\image.png" style="width: 95%;">
+            </div>
+        </div>
+
+
+        <div class="button-main">
+            <a class="button-main__link-1" href="history.html">
+                <p>Изучить историю</p>
+            </a>
+            <a class="button-main__link-2" href="characteristic.html">
+                <p>Характеристики</p>
+            </a>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <a href="info.html">О проекте</a>
+    </footer>
+</body>
+
+</html>

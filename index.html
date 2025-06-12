@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ВАЗ-2107</title>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            padding: 0px;
+            z-index: -999;
+            background-image: url("source/2107_1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .page-view {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .main-menu {
+            width: 180px;
+            height: 60px;
+            border: 1px solid black;
+            background-color: gray;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px gray;
+            text-align: center;
+            padding-top: 28px;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24pt;
+            color: black;
+        }
+
+        .info {
+            position: fixed;
+            bottom: 18px;
+            margin: auto;
+            text-decoration: none;
+            color: grey;
+        }
+
+        .info:hover {
+            position: fixed;
+            bottom: 15px;
+            margin: auto;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .page-view-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-view {
+            width: 96%;
+            height: 96%;
+
+            border: 1px Solid gray;
+            border-radius: 15px;
+
+            background-color: rgba(210, 210, 210, 0.721);
+            box-shadow: 0px 0px 60px gainsboro;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-view h1 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+
+        @keyframes bc {
+            0% {
+                box-shadow: 0px 0px 10px white;
+            }
+
+            50% {
+                box-shadow: 0px 0px 10px rgb(255, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0px 0px 10px white;
+
+            }
+        }
+
+        .page-view p {
+            width: 520px;
+            height: auto;
+
+            border: 1px solid black;
+            border-radius: 15px;
+            text-align: center;
+
+            background-color: antiquewhite;
+
+            animation-name: bc;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        .page-view a:hover {
+            font-size: 24pt;
+            color: black;
+            background-color: red;
+            width: 182px;
+            height: 60px;
+            box-shadow: 0px 0px 40px rgb(255, 103, 103);
+        }
+    </style>
+
+
+
+</head>
+
+<body class="page-view-main">
+
+    <div class="page-view">
+        <h1>ВАЗ-2107 — легенда в деталях</h1>
+        <p>
+            Интерактивный музей-гид по культовому автомобилю, сочетающий историю, технику, ностальгию.
+        </p>
+        <a class="main-menu" href="Introduction.html">НАЧАТЬ</a>
+    </div>
+    <a href="info.html" class="info">О проекте</a>
+</body>
+
+</html>
